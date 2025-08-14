@@ -1,0 +1,102 @@
+:root {
+    --w: 54px;
+    --h: 30px;
+    --pad: 3px;
+    --bg-off: #c7c7cc;
+    --bg-on: #34c759;
+    --knob: #fff;
+    --focus: 2px solid #3b82f6;
+  }
+  
+  body {
+    background-color: #3b82f6;
+    transition: background-color 0.5s ease;
+  
+    display: flex;
+    justify-content: center; 
+    align-items: center; 
+    min-height: 100vh;
+    margin: 0;
+  }
+  
+  .carta {
+    width: 90%;
+    max-width: 400px; 
+    height: 30vh; 
+    border-radius: 30px;
+    padding: 3rem;
+    background: #0095ff;
+    box-shadow: 10px 10px 20px rgb(197, 197, 197),
+      -10px -10px 20px rgb(124, 124, 124);
+  
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: space-evenly;
+    align-items: center;
+  }
+  .texto {
+    transition: all 0.5s ease;
+  }
+  .palabra {
+    font-size: 2rem;
+    line-height: 1;
+  }
+  .switch-input {
+    position: absolute;
+    inline-size: 1px;
+    block-size: 1px;
+    margin: -1px;
+    padding: 0;
+    border: 0;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    clip-path: inset(50%);
+    white-space: nowrap;
+  }
+  
+  .switch {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+  }
+  
+  .switch-label {
+    display: inline-block;
+    inline-size: var(--w);
+    block-size: var(--h);
+    background: var(--bg-off);
+    border-radius: calc(var(--h) / 2);
+    position: relative;
+    cursor: pointer;
+    transition: background 0.2s ease;
+  }
+  
+  .switch-label::after {
+    content: "";
+    position: absolute;
+    inset-block-start: var(--pad);
+    inset-inline-start: var(--pad);
+    inline-size: calc(var(--h) - var(--pad) * 2);
+    block-size: calc(var(--h) - var(--pad) * 2);
+    background: var(--knob);
+    border-radius: 50%;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.25);
+    transition: transform 0.2s ease;
+  }
+  
+  .switch-input:checked + .switch-label {
+    background: var(--bg-on);
+  }
+  
+  .switch-input:checked + .switch-label::after {
+    transform: translateX(calc(var(--w) - var(--h)));
+  }
+  
+  .switch-input:focus + .switch-label {
+    outline: var(--focus);
+    outline-offset: 4px;
+  }
+  
+  .switch-text {
+    user-select: none;
+  }
