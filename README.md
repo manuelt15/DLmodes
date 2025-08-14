@@ -29,8 +29,3 @@ npm run dev
 📄 Licencia
 
 Este proyecto está bajo la licencia MIT.
-
----
-
-Si quieres, ahora mismo puedo guiarte para **guardar este README.md**, hacer el commit y cerrar el conflicto de una vez para que ya puedas desplegar.  
-¿Quieres que lo hagamos en este momento?
